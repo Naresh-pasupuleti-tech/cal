@@ -13,6 +13,6 @@ jobs:
       - run: ls -R
  
       - run: |
-          cd learn_devops/shell_script/cal
+          cd shell_script/cal
           bash main.sh
  
