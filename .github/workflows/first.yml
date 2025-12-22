@@ -7,4 +7,4 @@ jobs:
             - uses: actions/checkout@v4
             - run: echo "Hello From Ci"
             - run: ls -R
-            - run: bash shell_script/cal/main.sh
+            - run: bash learn_devops/shell_script/cal/main.sh
