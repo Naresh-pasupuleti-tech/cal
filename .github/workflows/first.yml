@@ -1,10 +1,18 @@
 name: Cal CI
+ 
 on: push
+ 
 jobs:
   build:
-      runs-on: ubuntu-latest
-      steps:
-            - uses: actions/checkout@v4
-            - run: echo "Hello From Ci"
-            - run: ls -R
-            - run: bash learn_devops/shell_script/cal/main.sh
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - run: echo "Hello From CI"
+ 
+      - run: ls -R
+ 
+      - run: |
+          cd learn_devops/shell_script/cal
+          bash main.sh
+ 
