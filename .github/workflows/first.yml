@@ -12,7 +12,5 @@ jobs:
  
       - run: ls -R
  
-      - run: |
-          cd shell_script/cal
-          bash main.sh
- 
+      - run: bash main.sh
+        working-directory: shell_script/cal
