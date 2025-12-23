@@ -2,8 +2,7 @@ name: CLI Calculator Test
  
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
  
 jobs:
   test-calculator:
@@ -18,4 +17,5 @@ jobs:
  
       - name: Run calculator script
         run: |
-          echo "10 20 30" | ./main.sh
+          printf "1\n10 20 30\n5\n" | ./main.sh
+ 
