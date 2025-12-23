@@ -1,21 +1,21 @@
-
-name: Calculator Workflow
-
+name: CLI Calculator Test
+ 
 on:
   push:
     branches:
       - main
-    runs-on: ubuntu-latest  workflow_dispatch:  # Allows manual trigger
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Make scripts executable
-        run: chmod +x *.sh
-
-      - name: Run main.sh
-        run: ./main.sh
-
+ 
 jobs:
-  run-calculator:
-
+  test-calculator:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Give execute permission
+        run: chmod +x main.sh
+ 
+      - name: Run calculator script
+        run: |
+          echo "10 20 30" | ./main.sh
