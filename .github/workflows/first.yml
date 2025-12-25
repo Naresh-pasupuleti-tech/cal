@@ -5,9 +5,9 @@ on:
     branches: [ main ]
  
 jobs:
-  test-calculator:
+  # -------- JOB 1 : BUILD --------
+  build:
     runs-on: ubuntu-latest
- 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,7 +15,22 @@ jobs:
       - name: Give execute permission
         run: chmod +x main.sh
  
-      - name: Run calculator script
-        run: |
-          printf "1\n10 20 30\n5\n" | ./main.sh
+      - name: Build step
+        run: printf "1\n10 20 30\n5\n" | ./main.sh
  
+  # -------- JOB 2 : TEST --------
+  test:
+    needs: build   # 👈 test runs AFTER build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Give execute permission
+        run: chmod +x main.sh
+ 
+      - name: Run test case
+        run: |
+          output=$(printf "1\n10 20\n5\n" | ./main.sh)
+          echo "Output: $output"
+  

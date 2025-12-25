@@ -1,0 +1,14 @@
+name: test cal
+on:
+  push:
+    branches: [main]
+jobs:
+  test-cal:
+    reuns-on: ubuntu-latest
+    steps:
+        - name: checkout code
+          uses: actions/checkout@v4
+        - name: Give executes persmissions
+          run: chmod +x main.sh
+        - name: Run cal
+          run: 
