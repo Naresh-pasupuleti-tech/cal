@@ -17,7 +17,7 @@ jobs:
         run : docker build -t cal-ci .
 
       - name: validate docker-compose file
-        run: docker-compose config
+        run: docker compose config
  
       - name: Give execute permission
         run: chmod +x main.sh
