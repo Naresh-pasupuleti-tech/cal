@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Build Docker image
+        ru : docker build -t cal-ci .
+
+      - name: validate docker-compose file
+        run: docker-compose config
  
       - name: Give execute permission
         run: chmod +x main.sh
