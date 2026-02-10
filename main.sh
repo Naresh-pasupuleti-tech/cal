@@ -33,9 +33,10 @@ read -p "Enter the numbers(space seperated)" -a nums
 case $option in 
 	1)
 		
-		result=$(add "${nums[@]}") 
+		result=$(add "${nums[@]}")
+        echo $result
 	       
-         	#${nums[@]} expands all arguments and add call the function
+        #${nums[@]} expands all arguments and add call the function
 		#add 10 20 30 results = 60
 		;;
 	2)
@@ -57,6 +58,6 @@ case $option in
 		echo "Invalid"
 		;;
 esac
-echo "Result = $result"
+echo "Result = $result" >> /data/history.txt
 done
 

@@ -1,0 +1,5 @@
+version: "2"
+services:
+  cal:
+    image: cal-app
+    container_name: cal-container
